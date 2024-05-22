@@ -1,0 +1,65 @@
+﻿<Window x:Class="Desktop_proekt.InterestDetailsPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Desktop_proekt"
+        mc:Ignorable="d"
+        Title="InterestDetailsPage" Height="450" Width="800">
+    <Grid>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="10">
+            <StackPanel.Resources>
+                <Style TargetType="Label">
+                    <Setter Property="Width" Value="150"/>
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                </Style>
+            </StackPanel.Resources>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Interest Detail ID:"/>
+                <TextBox x:Name="InterestDetailId" Width="200" Margin="0,10,0,0" IsReadOnly="True" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Bank Product ID:"/>
+                <TextBox x:Name="BankProductId" Width="200" Margin="0,10,0,0" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Term Length (Months):"/>
+                <TextBox x:Name="TermLengthInMonths" Width="200" Margin="0,10,0,0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="USD Interest Rate:"/>
+                <TextBox x:Name="UsdInterestRate" Width="200" Margin="0,10,0,0" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="EUR Interest Rate:"/>
+                <TextBox x:Name="EurInterestRate" Width="200" Margin="0,10,0,0" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="BGN Interest Rate:"/>
+                <TextBox x:Name="BgnInterestRate" Width="200" Margin="0,10,0,0" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Government Tax Rate:"/>
+                <TextBox x:Name="GovernmentTaxRate" Width="200" Margin="0,10,0,0" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Early Withdrawal Penalty Rate:"/>
+                <TextBox x:Name="EarlyWithdrawalPenaltyRate" Width="200" Margin="0,10,0,0" />
+            </StackPanel>
+        </StackPanel>
+
+        <!-- Buttons for Actions -->
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="10,244,0,-234">
+            <Button Content="Add Interest Detail" Width="150" Click="AddInterestDetail_Click"/>
+            <Button Content="Update Interest Detail" Width="150" Margin="0,10,0,0" Click="UpdateInterestDetail_Click"/>
+            <Button Content="Refresh Grid" Width="150" Margin="0,10,0,0" Click="RefreshGrid_Click"/>
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <TextBox x:Name="InterestDetailIdToDelete" Width="150" />
+            </StackPanel>
+            <Button Content="Delete Interest Detail" Width="150" Margin="0,10,0,0" Click="DeleteInterestDetail_Click"/>
+            <Button Content="Back" Width="150" Margin="0,10,0,0" Click="Back_Click"/>
+        </StackPanel>
+
+        <DataGrid x:Name="DataGridInterestDetails" HorizontalAlignment="Left" Width="322" Margin="468,10,0,10" SelectionChanged="DataGridInterestDetails_SelectionChanged"/>
+    </Grid>
+</Window>

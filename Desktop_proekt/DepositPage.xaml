@@ -1,0 +1,63 @@
+﻿<Window x:Class="Desktop_proekt.DepositPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Desktop_proekt"
+        mc:Ignorable="d"
+        Title="DepositPage" Height="450" Width="800">
+    <Grid>
+        <!-- Input Fields -->
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="21,12,0,8">
+            <StackPanel.Resources>
+                <Style TargetType="Label">
+                    <Setter Property="Width" Value="120"/>
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                </Style>
+            </StackPanel.Resources>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Deposit ID:"/>
+                <TextBox x:Name="DepositId" Width="200" Margin="0,10,0,0" IsReadOnly="True" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Product ID:"/>
+                <TextBox x:Name="ProductId" Width="200" Margin="0,10,0,0" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Currency:"/>
+                <ComboBox x:Name="Currency" Width="200" Margin="0,10,0,0">
+                    <ComboBoxItem Content="USD" />
+                    <ComboBoxItem Content="EUR" />
+                    <ComboBoxItem Content="BGN" />
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Interest Rate:"/>
+                <TextBox x:Name="InterestRate" Width="200" Margin="0,10,0,0" IsReadOnly="True" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Term Length:"/>
+                <TextBox x:Name="TermLength" Width="200" Margin="0,10,0,0" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Early Withdrawal Penalty:"/>
+                <TextBox x:Name="EarlyWithdrawalPenalty" Width="200" Margin="0,10,0,0" />
+            </StackPanel>
+        </StackPanel>
+
+        <!-- Buttons for Actions -->
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="20,217,0,35" RenderTransformOrigin="0.533,1.72">
+            <Button Content="Add Deposit" Width="150" Click="AddDeposit_Click" />
+            <Button Content="Update Deposit" Width="150" Margin="0,10,0,0" Click="UpdateDeposit_Click" />
+            <Button Content="Refresh Grid" Width="150" Margin="0,10,0,0" Click="RefreshGrid_Click" />
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <TextBox x:Name="DepositIdToDelete" Width="150" />
+            </StackPanel>
+            <Button Content="Delete Deposit" Width="150" Margin="0,10,0,0" Click="DeleteDeposit_Click" />
+            <Button Content="Back" Width="150" Margin="0,10,0,0" Click="Back_Click" />
+        </StackPanel>
+
+        <!-- Data Grid for Displaying Deposits -->
+        <DataGrid x:Name="DataGridDeposits" HorizontalAlignment="Right" Width="400" Margin="0,10,10,10" SelectionChanged="DataGridDeposits_SelectionChanged" />
+    </Grid>
+</Window>
